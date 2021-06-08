@@ -1,23 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+import Article from './components/Article'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is a running React app!
-        </p>
-        <a
-          className="App-link"
-          href="https://blog.app.localhost"
-          rel="noopener noreferrer"
-        >
-          Go back to twig
-        </a>
-      </header>
+      <Router>
+        <Switch>
+        <Route path="/articles/:slug" component={Article} />
+        </Switch>
+      </Router>
     </div>
   );
 }
