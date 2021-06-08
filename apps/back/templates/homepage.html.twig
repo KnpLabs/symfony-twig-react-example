@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>Homepage symfony</h1>
+
+  <p>
+    Ut neque libero, vestibulum sed tellus vel, volutpat iaculis arcu. Mauris imperdiet, mauris quis dignissim lobortis,
+    dui libero tempus magna, quis consequat magna risus id est. Donec gravida arcu sit amet libero tristique dictum ut ac metus.
+    Nam sed lectus tempor, ultricies arcu sed, tincidunt mauris. Vestibulum semper malesuada diam, quis sodales augue gravida non.
+    Nulla eu semper ex. Quisque dolor purus, elementum vel auctor at, bibendum dapibus lectus. Suspendisse ullamcorper ante vitae
+    dolor sodales, in sodales ex venenatis. Suspendisse malesuada enim in porta efficitur.
+  </p>
+
+  <a href="{{ frontPath('articles.show', {slug: 'yolo', id: '23'}) }}">go to react</a>
+{% endblock body %}
