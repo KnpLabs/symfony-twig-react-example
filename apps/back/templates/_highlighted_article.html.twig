@@ -1,0 +1,5 @@
+<div>
+  <h2>{{article.name}}</h2>
+  <p>Article excerpt...</p>
+  <a href="{{ frontPath('articles.show', {slug: article.name|lower|slug, id:article.id}) }}">Read full article</a>
+</div>

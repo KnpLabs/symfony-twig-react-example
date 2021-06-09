@@ -17,6 +17,7 @@ services:
     App\:
         resource: '../src/'
         exclude:
+            - '../src/Controller/'
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
@@ -25,6 +26,10 @@ services:
     App\Twig\FrontendPathExtension:
         arguments:
             - '%env(FRONTEND_HOST)%'
+
+    App\Controller\:
+      resource: '../src/Controller/'
+      public: true
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
