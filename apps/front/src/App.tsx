@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { 
+import {
   BrowserRouter as Router,
   Switch,
   Route
-} from 'react-router-dom'
-import Article from './components/Article'
+} from 'react-router-dom';
+import Article from './components/Article';
 
 function App() {
   return (
