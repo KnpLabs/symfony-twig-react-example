@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { listArticles } from '../hooks/api';
+import { useArticles } from '../hooks/api';
 import slugify from '../services/slugify';
 
 const ArticleList = () => {
-  const articles = listArticles();
+  const articles = useArticles();
 
   if (articles === null) {
     return <p>Loading...</p>

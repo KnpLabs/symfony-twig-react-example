@@ -13,7 +13,7 @@ async function api<T>(path: string): Promise<T> {
     return res.json()
 }
 
-const getArticle = (id: number): Maybe<Article> => {
+const useArticle = (id: number): Maybe<Article> => {
   const fetchArticle = async (id: number): Promise<Maybe<Article>> => {
     return api<Article|null>(`/articles/${id}`)
   };
@@ -28,7 +28,7 @@ const getArticle = (id: number): Maybe<Article> => {
   return article;
 }
 
-const listArticles = (): Maybe<Article[]> => {
+const useArticles = (): Maybe<Article[]> => {
   const fetchArticles = async (): Promise<Maybe<Article[]>> => {
     return api<Maybe<Article[]>>(`/articles`)
   }
@@ -44,6 +44,6 @@ const listArticles = (): Maybe<Article[]> => {
 }
 
 export {
-  getArticle,
-  listArticles
+  useArticle,
+  useArticles
 }
