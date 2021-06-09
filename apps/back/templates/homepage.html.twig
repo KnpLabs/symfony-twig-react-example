@@ -13,5 +13,5 @@
 
   {% include '_highlighted_article.html.twig' with { 'article': highlightedArticle } %}
 
-  <a href="{{ frontPath('articles.show', {slug: 'yolo', id: '23'}) }}">go to react</a>
+  <a href="{{ frontPath('articles.list') }}">List all articles</a>
 {% endblock body %}

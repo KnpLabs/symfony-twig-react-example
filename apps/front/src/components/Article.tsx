@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router'
 import { getArticle } from '../hooks/api'
 
@@ -21,6 +22,7 @@ const Article = () => {
     <>
       <h1>{article.name}</h1>
       <div dangerouslySetInnerHTML={{__html: article.content}}></div>
+      <Link to="/articles">Go back to list</Link>
     </>
   )
 }

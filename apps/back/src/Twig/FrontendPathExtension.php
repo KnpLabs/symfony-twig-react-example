@@ -27,7 +27,7 @@ class FrontendPathExtension extends AbstractExtension
         ];
     }
 
-    public function frontPath(string $name, array $params): string
+    public function frontPath(string $name, array $params = []): string
     {
         if (!array_key_exists($name, self::ROUTES)) {
             throw new Exception("The route {$name} is not defined.");

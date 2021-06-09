@@ -6,13 +6,15 @@ import {
   Route
 } from 'react-router-dom';
 import Article from './components/Article';
+import ArticleList from './components/ArticleList';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/articles/:slug" component={Article} />
+          <Route exact path="/articles" component={ArticleList} />
+          <Route path="/articles/:slug" component={Article} />
         </Switch>
       </Router>
     </div>

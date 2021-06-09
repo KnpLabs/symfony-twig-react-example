@@ -7,7 +7,7 @@ class Articles
     const ARTICLES = [
             [
                 'id'      => 23,
-                'name'    => 'Yolo',
+                'name'    => 'Yolo article',
                 'content' => '<p>Lorem ipsum dolor sit amet. Veritatis officiis <em>Et autem aut repellat illum est internos asperiores</em>  porro quibusdam? Ex minima voluptatem aut aperiam expedita aut ullam unde. Qui molestias veritatis sit pariatur molestiae id similique reiciendis id sunt sint aut Quis odio. Ut voluptatem quis ut libero minus  temporibus consequatur. </p>
 <dl>
     <dt><dfn>Eum minus velit? </dfn></dt><dd>Et voluptatum  et fugiat nemo ut omnis accusantium. </dd>
@@ -22,9 +22,8 @@ class Articles
             ],
             [
                 'id'      => 25,
-                'name'    => 'Foo',
-                'content' => '
-<p>Lorem ipsum dolor sit amet. Et omnis obcaecati aut distinctio quidem id officiis delectus et rerum neque non accusamus pariatur ut officia maiores qui consequatur aliquid. Eos obcaecati ipsum aut optio dolores vel alias laboriosam et debitis voluptas et aspernatur quidem. Ea voluptate deserunt <em>Ut perferendis et itaque quasi</em>. </p>
+                'name'    => 'Lorem ipsum dolor sit amet',
+                'content' => '<p>Lorem ipsum dolor sit amet. Et omnis obcaecati aut distinctio quidem id officiis delectus et rerum neque non accusamus pariatur ut officia maiores qui consequatur aliquid. Eos obcaecati ipsum aut optio dolores vel alias laboriosam et debitis voluptas et aspernatur quidem. Ea voluptate deserunt <em>Ut perferendis et itaque quasi</em>. </p>
 <pre><code>&lt;!-- A voluptatem nihil est officiis illo et placeat perferendis. --&gt;<br>&lt;et&gt;Aut ducimus dicta eos recusandae deserunt eos illo tempora.&lt;/et&gt;<br>&lt;ullam&gt;33 quasi illum est voluptatem rerum aut ipsa doloribus.&lt;/ullam&gt;<br>&lt;nemo&gt;Non numquam beatae vel provident suscipit aut aliquam temporibus!&lt;/nemo&gt;<br></code></pre>
 <p>Eos Quis reiciendis eos soluta voluptatem et cumque placeat! Qui dolores voluptatem aut autem possimus <em>Quo asperiores quo porro aliquam et quae incidunt et quia quam</em>. Qui esse eius non sint aliquid qui consequuntur autem et quae doloremque? Aut illum aspernatur aut voluptas quibusdam et placeat galisum nam sint maiores sed odio cumque! </p>
 <blockquote cite="https://www.loremipzum.com">Vel laborum perferendis 33 nesciunt velit qui dolore veniam qui quia culpa est Quis distinctio sed recusandae quis. </blockquote>

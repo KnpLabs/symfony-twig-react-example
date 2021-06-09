@@ -58,6 +58,7 @@ services:
       - "traefik.http.routers.front.tls=true"
       - "traefik.http.services.front.loadbalancer.server.port=3000"
     environment:
+      REACT_APP_SYMFONY_HOST: 'https://blog.app.localhost'
       REACT_APP_API_URL: 'https://blog.app.localhost/api'
     volumes:
       - ./apps/front:/usr/src/app:rw
