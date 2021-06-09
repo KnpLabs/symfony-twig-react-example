@@ -1,13 +1,15 @@
-import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
+import { useMe } from './hooks/api'
 import Article from './components/Article';
 import ArticleList from './components/ArticleList';
 
 function App() {
+  const me = useMe()
+
   return (
     <div className="container">
       <section className="hero is-info">
@@ -18,6 +20,17 @@ function App() {
           <p className="subtitle">
             Powered by React
           </p>
+          { me && (
+            <>
+              <span className="tag">Hello {me.email}!</span>
+              <a 
+                className="button is-danger" 
+                href={`${process.env.REACT_APP_SYMFONY_HOST}/logout`}
+              >
+                Logout
+              </a>
+            </>
+          )}
         </div>
       </section>
 

@@ -1,0 +1,14 @@
+me:
+  path: /api/me
+  controller: App\Controller\RestController::me
+
+list_articles:
+    path: /api/articles
+    controller: App\Controller\RestController::listArticles
+
+get_article:
+    path: /api/articles/{id}
+    controller: App\Controller\RestController::getArticle
+    requirements:
+      id: '\d+'
+

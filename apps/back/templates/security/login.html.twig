@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<section class="section columns">
+  <form class="column is-one-third" method="post">
+      {% if error %}
+          <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+      {% endif %}
+
+      {% if app.user %}
+          <div class="mb-3">
+              You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+          </div>
+      {% endif %}
+
+      <h1 class="title">Please sign in</h1>
+
+      <label for="inputEmail">Email</label>
+      <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="input" required autofocus>
+
+      <label for="inputPassword">Password</label>
+      <input type="password" name="password" id="inputPassword" class="input" required>
+
+      <input type="hidden" name="_csrf_token"
+             value="{{ csrf_token('authenticate') }}"
+      >
+
+      {% if target_path is not null %}
+        <input type="hidden" name="_target_path" value="{{ target_path }}" >
+      {% endif %}
+
+      <button class="button is-primary mt-1" type="submit">
+          Sign in
+      </button>
+  </form>
+</section>
+{% endblock %}

@@ -1,13 +1,3 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
-
-list_articles:
-    path: /api/articles
-    controller: App\Controller\RestController::listArticles
-
-get_article:
-    path: /api/articles/{id}
-    controller: App\Controller\RestController::getArticle
-    requirements:
-      id: '\d+'

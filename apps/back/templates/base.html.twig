@@ -16,7 +16,7 @@
     </head>
     <body>
       <div class="container">
-        <section class="hero is-success">
+        <section class="hero is-primary">
           <div class="hero-body">
             <p class="title">
               Blog
@@ -24,6 +24,24 @@
             <p class="subtitle">
               Powered by Twig
             </p>
+
+            {% if app.user %}
+              <span class="tag">Hello {{app.user.username}}!</span>
+              <a 
+                class="button is-danger" 
+                href="{{ path('app_logout') }}"
+              >
+                Logout
+              </a>
+            {% else %}
+              <a 
+                class="button" 
+                href="{{ path('app_login') }}"
+              >
+                Login
+              </a>
+
+            {% endif %}
           </div>
         </section>
 

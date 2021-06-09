@@ -22,3 +22,6 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 RUN composer install --no-scripts --prefer-dist --no-interaction
 
 FROM base as dev
+
+ENV APP_ENV dev
+ENV TRUSTED_PROXIES 172.0.0.0/8

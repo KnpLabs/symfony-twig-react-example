@@ -3,16 +3,25 @@
 namespace App\Controller;
 
 use App\Collection\Articles;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class RestController
+class RestController extends AbstractController
 {
     private Articles $articlesCollection;
 
     public function __construct(Articles $articlesCollection)
     {
         $this->articlesCollection = $articlesCollection;
+    }
+
+    public function me(): JsonResponse
+    {
+        return new JsonResponse([
+            'email' => $this->getUser()->getUsername(),
+            'roles' => $this->getUser()->getRoles(),
+        ]);
     }
 
     public function listArticles(): Response
