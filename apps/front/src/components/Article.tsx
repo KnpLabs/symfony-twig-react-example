@@ -19,11 +19,11 @@ const Article = () => {
   }
 
   return (
-    <>
-      <h1>{article.name}</h1>
+    <div className="section">
+      <h1 className="title">{article.name}</h1>
       <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
-      <Link to="/articles">Go back to list</Link>
-    </>
+      <Link className="button is-light" to="/articles">Go back to list</Link>
+    </div>
   )
 }
 

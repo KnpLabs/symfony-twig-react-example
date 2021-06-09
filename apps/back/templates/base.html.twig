@@ -7,6 +7,7 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +15,32 @@
         {% endblock %}
     </head>
     <body>
+      <div class="container">
+        <section class="hero is-success">
+          <div class="hero-body">
+            <p class="title">
+              Blog
+            </p>
+            <p class="subtitle">
+              Powered by Twig
+            </p>
+          </div>
+        </section>
+
+        <a class="button is-fullwidth is-info is-light" href="{{ frontPath('articles.list') }}">Go back to react</a>
+
         {% block body %}{% endblock %}
+
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              Twig powered <strong>Symfony</strong> app. The source code is licensed
+            </p>
+            <figure class="image is-64x64">
+              <img src="https://symfony.com/logos/symfony_black_03.png">
+            </figure>
+          </div>
+        </footer>
+      </div>
     </body>
 </html>

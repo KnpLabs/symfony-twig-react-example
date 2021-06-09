@@ -10,16 +10,17 @@ const ArticleList = () => {
   }
 
   return (
-    <>
-      <ul>
-        { articles.map((article, key) => (
-          <li key={key}>
-            <Link to={`/articles/${slugify(article.name)}_${article.id}`}>{article.name}</Link>
-          </li>
-        )) }
-      </ul>
-      <a href={process.env.REACT_APP_SYMFONY_HOST}>Go back to homepage</a>
-    </>
+    <section className="section">
+      <div className="box">
+        <ul>
+          { articles.map((article, key) => (
+            <li key={key}>
+              <Link to={`/articles/${slugify(article.name)}_${article.id}`}>{article.name}</Link>
+            </li>
+          )) }
+        </ul>
+      </div>
+    </section>
   );
 }
 
