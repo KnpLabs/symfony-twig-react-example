@@ -1,15 +1,14 @@
-FROM php:8.0-fpm as base
+FROM composer:2 as composer
 
-RUN docker-php-ext-install pdo_mysql
+FROM php:8.0-fpm-alpine3.13 as base
 
-RUN pecl install apcu
-
-RUN apt-get update && \
-apt-get install -y \
-libzip-dev
-
-RUN docker-php-ext-install zip
-RUN docker-php-ext-enable apcu
+RUN apk add --no-cache --virtual=.build-deps \
+        autoconf==2.69-r3 \
+        g++==10.2.1_pre1-r3 \
+        make==4.3-r0 \
+    && pecl install apcu-5.1.19 \
+    && docker-php-ext-enable apcu \
+    && apk del .build-deps
 
 WORKDIR /usr/src/app
 
@@ -17,7 +16,7 @@ COPY --chown=1000:1000 . /usr/src/app
 
 RUN PATH=$PATH:/usr/src/app/vendor/bin:bin
 
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN composer install --no-scripts --prefer-dist --no-interaction
 
