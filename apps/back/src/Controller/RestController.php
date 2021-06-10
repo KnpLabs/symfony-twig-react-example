@@ -19,7 +19,7 @@ class RestController extends AbstractController
     public function me(): JsonResponse
     {
         return new JsonResponse([
-            'email' => $this->getUser()->getUsername(),
+            'email' => $this->getUser()->getUserIdentifier(),
             'roles' => $this->getUser()->getRoles(),
         ]);
     }

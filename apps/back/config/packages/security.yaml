@@ -22,17 +22,15 @@ security:
 
         api:
             pattern: ^/api/
-            guard:
-                authenticators:
-                    - App\Security\LoginFormAuthenticator
+            custom_authenticators:
+                - App\Security\LoginFormAuthenticator
             entry_point: App\Security\AuthenticationEntryPoint
 
         main:
             lazy: true
             provider: users_in_memory
-            guard:
-                authenticators:
-                    - App\Security\LoginFormAuthenticator
+            custom_authenticators:
+                - App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
 
