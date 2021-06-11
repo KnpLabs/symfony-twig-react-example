@@ -1,5 +1,7 @@
 FROM composer:2 as composer
 
+##################################
+
 FROM php:8.0-fpm-alpine3.13 as base
 
 RUN apk add --no-cache --virtual=.build-deps \
@@ -20,7 +22,17 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN composer install --no-scripts --prefer-dist --no-interaction
 
+##################################
+
 FROM base as dev
 
 ENV APP_ENV dev
 ENV TRUSTED_PROXIES 172.0.0.0/8
+
+##################################
+
+FROM base as prod
+
+ENV APP_ENV prod
+
+COPY . /usr/src/app

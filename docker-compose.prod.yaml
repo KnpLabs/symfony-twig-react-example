@@ -28,9 +28,7 @@ services:
     build:
       context: apps/back
       dockerfile: Dockerfile
-      target: dev
-    volumes:
-      - './apps/back:/usr/src/app:rw'
+      target: prod
     environment:
       FRONTEND_HOST: 'http://blog.app.localhost'
     restart: unless-stopped
@@ -39,17 +37,15 @@ services:
     build:
       context: apps/front
       dockerfile: Dockerfile
-      target: dev
+      target: prod
+      args:
+        REACT_APP_SYMFONY_HOST: 'http://blog.app.localhost'
+        REACT_APP_API_URL: 'http://blog.app.localhost/api'
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.front.rule=Host(`blog.app.localhost`) && (
         PathPrefix(`/react`) ||
         PathPrefix(`/articles`)
       )'
-      - 'traefik.http.services.front.loadbalancer.server.port=3000'
-    environment:
-      REACT_APP_SYMFONY_HOST: 'http://blog.app.localhost'
-      REACT_APP_API_URL: 'http://blog.app.localhost/api'
-    volumes:
-      - './apps/front:/usr/src/app:rw'
+      - 'traefik.http.services.front.loadbalancer.server.port=80'
     restart: unless-stopped
