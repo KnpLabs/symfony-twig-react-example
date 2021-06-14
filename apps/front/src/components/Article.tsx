@@ -8,7 +8,7 @@ interface ParamType {
 
 const Article = () => {
   const { slug } = useParams<ParamType>()
-  const [nameSlug, id] = slug.split('_')
+  const [, id] = slug.split('_')
 
   const article = useArticle(parseInt(id, 10));
 

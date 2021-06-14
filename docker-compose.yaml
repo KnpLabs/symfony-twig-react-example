@@ -50,6 +50,7 @@ services:
     environment:
       REACT_APP_SYMFONY_HOST: 'http://blog.app.localhost'
       REACT_APP_API_URL: 'http://blog.app.localhost/api'
+      WDS_SOCKET_PATH: '/react/sockjs-node'
     volumes:
       - './apps/front:/usr/src/app:rw'
     restart: unless-stopped
