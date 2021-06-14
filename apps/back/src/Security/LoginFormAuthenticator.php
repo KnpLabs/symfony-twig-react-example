@@ -51,16 +51,13 @@ class LoginFormAuthenticator extends AbstractAuthenticator
         );
     }
 
-    /**
-     * Override to change what happens after a bad username/password is submitted.
-     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
     {
         if ($request->hasSession()) {
             $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
         }
 
-        $url = $this->getLoginUrl($request);
+        $url = $this->getLoginUrl();
 
         return new RedirectResponse($url);
     }
