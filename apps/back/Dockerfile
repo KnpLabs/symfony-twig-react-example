@@ -34,5 +34,6 @@ ENV TRUSTED_PROXIES 172.0.0.0/8
 FROM base as prod
 
 ENV APP_ENV prod
+ENV TRUSTED_PROXIES 172.0.0.0/8
 
-COPY . /usr/src/app
+COPY --chown=1000:1000 . /usr/src/app
