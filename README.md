@@ -1,7 +1,7 @@
 # symfony-twig-react-example
 A proof of concept using a Twig powered Symfony app and a React SPA.
 
-This repository is linked to our article about [Use Traefik to create a React SPA alongside a Symfony + Twig legacy app](https://knplabs.com/fr/blog/use-traefik-to-create-a-react-spa-alongside-a-symfony-twig-legacy-app).
+This repository is linked to our article about [How to add a front-end framework to an existing Symfony monolith](https://knplabs.com/en/blog/how-to-add-a-front-end-framework-to-an-existing-symfony-monolith).
 
 ## Run in dev env
 `docker-compose up -d`
